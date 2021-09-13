@@ -639,7 +639,7 @@ def import_umls(umls_zip_filename, terminologies = None, langs = None, fts_index
   if extract_definitions: parsers.append(("MRDEF"  , parse_mrdef))
   parsers.append(("MRREL"  , parse_mrrel))
   if extract_attributes: parsers.append(("MRSAT"  , parse_mrsat))
-  #if (not terminology) or ("CUI" in terminologies): parsers["MRSTY"] = parse_mrsty
+  if (not terminology) or ("CUI" in terminologies): parsers["MRSTY"] = parse_mrsty
   
   remnants = defaultdict(str)
   
